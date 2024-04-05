@@ -3,7 +3,7 @@ import React from 'react';
 const BookCardSkeleton = () => {
   return (
     <div className="flex flex-col rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700 md:max-w-xl md:flex-row animate-pulse">
-    <div className="bg-gray-300 rounded-t-lg md:h-auto md:w-40 md:rounded-none md:rounded-l-lg" />
+    <div className="bg-gray-300 rounded-t-lg h-92 w-full md:rounded-none md:rounded-l-lg" />
     <div className="flex flex-col justify-start p-6 space-y-3">
       <div className="flex justify-between items-start">
         <div className="h-12 w-40 bg-gray-300 rounded"></div> 

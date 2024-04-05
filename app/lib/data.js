@@ -112,7 +112,7 @@ export const data = {
                 "pages": 216,
                 "genre": "Ciencia ficción",
                 "cover": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1653311117i/6691227.jpg",
-                "synopsis": "Un viaje absurdo y cómico por el espacio, con toallas.",
+                "synopsis": "Un viaje absurdo y cómico por el espacio, conconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconconcon toallas.",
                 "year": 1979,
                 "ISBN": "978-0345391803",
                 "author": {
