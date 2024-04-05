@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import {data} from '../lib/data.js';
+import { useEffect, useState } from "react";
+import { data } from "../lib/data.js";
 
 export const useBooksData = () => {
   const [books, setBooks] = useState([]);
