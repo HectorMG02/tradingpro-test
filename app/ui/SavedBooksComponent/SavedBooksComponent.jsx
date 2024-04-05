@@ -14,7 +14,7 @@ export default function SavedBooksComponent() {
 
     return (
         <div className="bg-gray-500">
-            <h2 className="text-2xl font-bold mb-3">Lista de lectura</h2>
+            <h2 className="text-2xl font-bold px-5 pt-8">Lista de lectura</h2>
             <div className="flex overflow-x-auto bg-scroll bg-gray-500 pb-10 gap-2 justify-center items-center">
                 {savedBooks.map((book, index) => (
                     <SavedBookCard
