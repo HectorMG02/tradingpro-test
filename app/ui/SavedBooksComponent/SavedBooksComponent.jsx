@@ -1,5 +1,5 @@
 import Image from "next/image";
-import BookCard from "../Cards/BookCard";
+import SavedBookCard from "../Cards/SavedBookCard";
 import PlaceholderCard from "../Cards/PlaceholderCard";
 
 
@@ -20,7 +20,7 @@ export default function SavedBooksComponent() {
         bg-scroll bg-gray-500 pb-4 gap-2
       ">
         {savedBooks.map((book, index) => (
-         <BookCard book={book} key={index} />
+         <SavedBookCard book={book} key={index} />
         ))}
         {placeholders.map((_, index) => (
          <PlaceholderCard key={index} />
