@@ -1,6 +1,6 @@
 import Image from "next/image";
-import BookCard from "../ui/Cards/BookCard";
-import PlaceholderCard from "../ui/Cards/PlaceholderCard";
+import BookCard from "../Cards/BookCard";
+import PlaceholderCard from "../Cards/PlaceholderCard";
 
 
 export default function SavedBooksComponent() {
