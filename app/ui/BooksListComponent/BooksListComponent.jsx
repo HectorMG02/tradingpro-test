@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import BookCard from '../Cards/BookCard';
 import BookCardSkeleton from '../Skeletons/BookCardSkeleton';
-import BookDetails from '../Modals/BookDetails'; // Asegúrate de ajustar la ruta de importación
+import BookDetails from '../Modals/BookDetails';
 import { useBooksData } from '../../hooks/useBooksData';
 
 const BooksListComponent = () => {
@@ -11,7 +11,6 @@ const BooksListComponent = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedBook, setSelectedBook] = useState(null);
 
-  // Función para abrir el modal y establecer el libro seleccionado
   const handleOpenModal = (book) => {
     setSelectedBook(book);
     setIsModalOpen(true);
@@ -23,7 +22,6 @@ const BooksListComponent = () => {
       <div className='grid grid-cols-3 gap-4'>
         {books?.length > 0 ? (
           books.map((book, index) => (
-            // Modifica BookCard para aceptar y manejar onClick o crear un wrapper aquí
             <div key={index}>
               <BookCard book={book.book} showBookDetails={() => handleOpenModal(book.book)} />
             </div>
