@@ -34,15 +34,12 @@ const BookCard = ({ book, showBookDetails, isFavorite, toggleFavorite }) => {
             <div className="flex flex-col justify-start p-6">
                 <div className="flex justify-between items-start">
                     <h5 className="text-xl font-medium">{book.title}</h5>
-                    <button
-                        className="text-red-500 hover:text-red-700"
-                        onClick={(e) => {
-                            e.stopPropagation();
+                    <HearthIcon
+                        isFavorite={isFavorite}
+                        toggleFavorite={() => {
                             toggleFavorite(book);
                         }}
-                    >
-                        <HearthIcon isFavorite={isFavorite} />
-                    </button>
+                    />
                 </div>
                 <p className="text-xs mb-2 text-neutral-500 dark:text-neutral-300">
                     {book.author?.name}

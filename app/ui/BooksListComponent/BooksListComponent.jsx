@@ -17,7 +17,7 @@ const BooksListComponent = () => {
     const toggleBookSaved = useStore((state) => state.toggleBookSaved);
 
     const checkIsFavorite = (book) => {
-        return savedBooks.some((savedBook) => savedBook.id === book.id);
+        return savedBooks.some((savedBook) => savedBook.ISBN === book.ISBN);
     };
 
     const handleOpenModal = (book) => {
@@ -25,7 +25,6 @@ const BooksListComponent = () => {
     };
 
     const handleToggleBookSaved = (book) => {
-        console.log('-->', { book });
         toggleBookSaved(book);
     };
 

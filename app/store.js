@@ -3,10 +3,10 @@ import create from 'zustand'
 const useStore = create((set) => ({
   savedBooks: [],
   toggleBookSaved: (bookToToggle) => set((state) => {
-    const isCurrentlySaved = state.savedBooks.some(book => book.id === bookToToggle.id);
+    const isCurrentlySaved = state.savedBooks.some(book => book.ISBN === bookToToggle.ISBN);
     return {
       savedBooks: isCurrentlySaved
-        ? state.savedBooks.filter(book => book.id !== bookToToggle.id)
+        ? state.savedBooks.filter(book => book.ISBN !== bookToToggle.ISBN)
         : [...state.savedBooks, bookToToggle],
     };
   }),
