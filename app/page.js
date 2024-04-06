@@ -16,26 +16,29 @@ export default function Home() {
     handleOpenModal,
     handleToggleBookSaved,
     genres,
-    handleGenreChange
+    handleGenreChange,
   } = useLogic();
 
   return (
     <div className="m-10">
- 
-      {
-        books.length > 0 ? (<> <SavedBooksComponent handleOpenModal={handleOpenModal} />
-        <BooksListComponent
-          books={books}
-          handleToggleBookSaved={handleToggleBookSaved}
-          handleOpenModal={handleOpenModal}
-          checkIsFavorite={checkIsFavorite}
-          genres={genres}
-          handleGenreChange={handleGenreChange}
-        />
-  </>) : (<>
-           <DashboardSkeleton/>
-        </>)
-      }
+      {books.length > 0 ? (
+        <>
+          {" "}
+          <SavedBooksComponent handleOpenModal={handleOpenModal} />
+          <BooksListComponent
+            books={books}
+            handleToggleBookSaved={handleToggleBookSaved}
+            handleOpenModal={handleOpenModal}
+            checkIsFavorite={checkIsFavorite}
+            genres={genres}
+            handleGenreChange={handleGenreChange}
+          />
+        </>
+      ) : (
+        <>
+          <DashboardSkeleton />
+        </>
+      )}
 
       {isModalOpen && selectedBook && (
         <BookDetails

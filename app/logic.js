@@ -1,17 +1,14 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 import { useBooksData } from "./hooks/useBooksData";
 import useStore from "./store";
 
-
-
-
 const useLogic = () => {
-  const genres = [ 'Fantasía', 'Ciencia ficción', 'Zombies', 'Terror' ]
+  const genres = ["Fantasía", "Ciencia ficción", "Zombies", "Terror"];
 
   const rawBooks = useBooksData(); // Libros originales sin filtrar
   const [books, setBooks] = useState(rawBooks); // Estado para libros filtrados
   // Nuevo estado para manejar el género seleccionado
-  const [selectedGenre, setSelectedGenre] = useState('Todos');
+  const [selectedGenre, setSelectedGenre] = useState("Todos");
 
   const selectBook = useStore((state) => state.selectBook);
   const initializeBooks = useStore((state) => state.initializeBooks);
@@ -42,13 +39,12 @@ const useLogic = () => {
   };
 
   useEffect(() => {
-    if (selectedGenre === 'Todos') {
+    if (selectedGenre === "Todos") {
       setBooks(rawBooks);
     } else {
-      setBooks(rawBooks.filter(book => book.book.genre === selectedGenre));
+      setBooks(rawBooks.filter((book) => book.book.genre === selectedGenre));
     }
   }, [selectedGenre, rawBooks]);
-
 
   return {
     books,
@@ -59,7 +55,7 @@ const useLogic = () => {
     handleOpenModal,
     handleToggleBookSaved,
     genres,
-    handleGenreChange
+    handleGenreChange,
   };
 };
 
