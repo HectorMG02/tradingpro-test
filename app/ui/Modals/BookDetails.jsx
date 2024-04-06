@@ -43,11 +43,14 @@ const BookDetails = ({ book, isOpen, onClose }) => {
                             <p>Género: {book.genre}</p>
                             <p>Páginas: {book.pages}</p>
                         </div>
-                        <button className="text-red-500 hover:text-red-700">
-                            <HearthIcon
-                                isFavorite={isFavorite}
-                                toggleFavorite={() => toggleFavorite(book)}
-                            />
+                        <button
+                            className="text-red-500 hover:text-red-700"
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                toggleFavorite(book);
+                            }}
+                        >
+                            <HearthIcon isFavorite={isFavorite} />
                         </button>
                     </div>
                     <div className="mt-6">

@@ -25,6 +25,7 @@ const BooksListComponent = () => {
     };
 
     const handleToggleBookSaved = (book) => {
+        console.log('-->', { book });
         toggleBookSaved(book);
     };
 
@@ -41,9 +42,7 @@ const BooksListComponent = () => {
                                       handleOpenModal(book.book)
                                   }
                                   isFavorite={checkIsFavorite(book.book)}
-                                  toggleBookFavorite={() =>
-                                      handleToggleBookSaved(book.book)
-                                  }
+                                  toggleFavorite={handleToggleBookSaved}
                               />
                           </div>
                       ))

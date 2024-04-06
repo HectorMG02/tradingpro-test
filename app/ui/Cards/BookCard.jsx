@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import HearthIcon from '../Icons/HearthIcon';
 
-const BookCard = ({ book, showBookDetails, isFavorite, toggleBook }) => {
+const BookCard = ({ book, showBookDetails, isFavorite, toggleFavorite }) => {
     const formatSynopsis = (synopsis, title) => {
         const titleLimit = 20;
         const synopsisLimit = 50;
@@ -38,13 +38,10 @@ const BookCard = ({ book, showBookDetails, isFavorite, toggleBook }) => {
                         className="text-red-500 hover:text-red-700"
                         onClick={(e) => {
                             e.stopPropagation();
-                            console.log('Hearth clicked');
+                            toggleFavorite(book);
                         }}
                     >
-                        <HearthIcon
-                            isFavorite={isFavorite}
-                            toggleFavorite={toggleBook}
-                        />
+                        <HearthIcon isFavorite={isFavorite} />
                     </button>
                 </div>
                 <p className="text-xs mb-2 text-neutral-500 dark:text-neutral-300">
