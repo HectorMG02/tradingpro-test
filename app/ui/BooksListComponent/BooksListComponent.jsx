@@ -3,31 +3,13 @@
 import React, { useState } from 'react';
 import BookCard from '../Cards/BookCard';
 import BookCardSkeleton from '../Skeletons/BookCardSkeleton';
-import BookDetails from '../Modals/BookDetails';
-import { useBooksData } from '../../hooks/useBooksData';
-import useStore from '../../store';
 
-const BooksListComponent = () => {
-    const books = useBooksData();
-    const selectBook = useStore((state) => state.selectBook);
-    const savedBooks = useStore((state) => state.savedBooks);
-    const selectedBook = useStore((state) => state.selectedBook);
-    const isModalOpen = useStore((state) => state.isModalOpen);
-    const deselectBook = useStore((state) => state.deselectBook);
-    const toggleBookSaved = useStore((state) => state.toggleBookSaved);
-
-    const checkIsFavorite = (book) => {
-        return savedBooks.some((savedBook) => savedBook.ISBN === book.ISBN);
-    };
-
-    const handleOpenModal = (book) => {
-        selectBook(book);
-    };
-
-    const handleToggleBookSaved = (book) => {
-        toggleBookSaved(book);
-    };
-
+const BooksListComponent = ({
+    books,
+    handleToggleBookSaved,
+    handleOpenModal,
+    checkIsFavorite,
+}) => {
     return (
         <div className="mt-10 bg-gray-500 p-5">
             <h2 className="text-2xl font-bold mb-3">Lista de libros</h2>
@@ -49,13 +31,6 @@ const BooksListComponent = () => {
                           .fill(0)
                           .map((_, index) => <BookCardSkeleton key={index} />)}
             </div>
-            {isModalOpen && selectedBook && (
-                <BookDetails
-                    book={selectedBook}
-                    isOpen={isModalOpen}
-                    onClose={deselectBook}
-                />
-            )}
         </div>
     );
 };
