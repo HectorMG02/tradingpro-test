@@ -6,6 +6,8 @@ localForage.config({
   storeName: "books",
 });
 
+const genres = ["Fantasía", "Ciencia ficción", "Zombies", "Terror"];
+
 const channel =
   typeof window !== "undefined"
     ? new BroadcastChannel("booklist_channel")
@@ -13,9 +15,12 @@ const channel =
 
 const useStore = create((set, get) => ({
   savedBooks: [],
+  genres,
+  selectedGenre: 'Todos',
   initializeBooks: async () => {
     const savedBooks = (await localForage.getItem("savedBooks")) || [];
-    set({ savedBooks });
+    const selectedGenre = (await localForage.getItem("selectedGenre")) || 'Todos';
+    set({ savedBooks, selectedGenre })
   },
   toggleBookSaved: async (bookToToggle) => {
     const { savedBooks } = get();
@@ -31,10 +36,15 @@ const useStore = create((set, get) => ({
 
     channel?.postMessage("update");
   },
+  setSelectedGenre: async (genre) => {
+    await localForage.setItem("selectedGenre", genre);
+    set({ selectedGenre: genre });
+  },
   selectedBook: null,
   isModalOpen: false,
   selectBook: (book) => set({ selectedBook: book, isModalOpen: true }),
   deselectBook: () => set({ selectedBook: null, isModalOpen: false }),
+  
 }));
 
 channel?.addEventListener("message", async (event) => {

@@ -6,7 +6,8 @@ const GenreSelectorSkeleton = () => {
     return (
         <div className="animate-pulse">
             <div
-                className="mb-4 p-2
+                className="p-2
+                mb-1
                 bg-gray-300
                 rounded-lg
                 shadow-md
@@ -15,7 +16,7 @@ const GenreSelectorSkeleton = () => {
                 w-32
             "
             />
-            <div className="grid grid-cols-3 gap-4 mb-4 bg-gray-300 rounded-lg h-1 w-32" />
+            <div className="grid grid-cols-3 gap-4 mb-4 bg-gray-300 rounded-lg h-3 w-32" />
         </div>
     );
 };

@@ -16,6 +16,7 @@ export default function Home() {
     handleOpenModal,
     handleToggleBookSaved,
     genres,
+    selectedGenre,
     handleGenreChange,
   } = useLogic();
 
@@ -31,6 +32,7 @@ export default function Home() {
             handleOpenModal={handleOpenModal}
             checkIsFavorite={checkIsFavorite}
             genres={genres}
+            selectedGenre={selectedGenre}
             handleGenreChange={handleGenreChange}
           />
         </>
