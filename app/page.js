@@ -18,7 +18,7 @@ export default function Home() {
 
   return (
     <div className="m-10">
-      <SavedBooksComponent />
+      <SavedBooksComponent handleOpenModal={handleOpenModal} />
       <BooksListComponent 
             books={books}
             handleToggleBookSaved={handleToggleBookSaved}
@@ -31,6 +31,8 @@ export default function Home() {
                     book={selectedBook}
                     isOpen={isModalOpen}
                     onClose={deselectBook}
+                    toggleFavorite={handleToggleBookSaved}
+                    isFavorite={checkIsFavorite(selectedBook)}
                 />
             )}
     </div>

@@ -3,12 +3,7 @@ import Image from 'next/image';
 import HearthIcon from '../Icons/HearthIcon';
 import useStore from '../../store';
 
-const BookDetails = ({ book, isOpen, onClose }) => {
-    const isFavorite = useStore((state) =>
-        state.savedBooks.some((savedBook) => savedBook.id === book.id)
-    );
-    const toggleFavorite = useStore((state) => state.toggleBookSaved);
-
+const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
     if (!isOpen) return null;
 
     return (

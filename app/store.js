@@ -13,7 +13,10 @@ const useStore = create((set) => ({
   selectedBook: null,
   isModalOpen: false,
   selectBook: (book) => set({ selectedBook: book, isModalOpen: true }),
-  deselectBook: () => set({ selectedBook: null, isModalOpen: false }),
+  deselectBook: () => {
+    console.log("llega")
+    return set({ selectedBook: null, isModalOpen: false })
+  }
 }))
 
 export default useStore;

@@ -1,12 +1,11 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import SavedBookCard from '../Cards/SavedBookCard';
 import PlaceholderCard from '../Cards/PlaceholderCard';
 import useStore from '../../store';
 
-export default function SavedBooksComponent() {
+export default function SavedBooksComponent({ handleOpenModal }) {
     const savedBooks = useStore((state) => state.savedBooks);
     const removeBookFromSaved = useStore((state) => state.removeBookFromSaved);
 
@@ -23,6 +22,7 @@ export default function SavedBooksComponent() {
                         book={book}
                         key={index}
                         onRemove={() => removeBookFromSaved(book.id)}
+                        showBookDetails={() => handleOpenModal(book)}
                     />
                 ))}
                 {placeholders.map((_, index) => (
