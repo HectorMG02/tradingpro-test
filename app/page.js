@@ -21,10 +21,9 @@ export default function Home() {
   } = useLogic();
 
   return (
-    <div className="m-10">
+<div className="m-4 sm:m-8 md:m-10">
       {books.length > 0 ? (
         <>
-          {" "}
           <SavedBooksComponent handleOpenModal={handleOpenModal} />
           <BooksListComponent
             books={books}

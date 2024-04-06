@@ -24,13 +24,13 @@ const GenreSelector = ({ genres, selectedGenre, onGenreChange, total }) => {
                 ))}
             </select>
 
-            <div className="grid grid-cols-3 gap-4 mb-4">
+            <div className="mb-3">
                 {total > 0 ? (
-                    <p className="text-gray-300 ">
+                    <p className="text-gray-300">
                         Mostrando {total} {total === 1 ? 'libro' : 'libros'}
                     </p>
                 ) : (
-                    <p className="text-gray-300 ">No hay libros disponibles</p>
+                    <p className="text-gray-300">No hay libros disponibles</p>
                 )}
             </div>
         </div>
