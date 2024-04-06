@@ -1,8 +1,8 @@
-import create from 'zustand';
+import {create} from 'zustand';
 import localForage from 'localforage';
 
 localForage.config({
-  name: 'myApp',
+  name: 'tradingProBooks',
   storeName: 'books',
 });
 
