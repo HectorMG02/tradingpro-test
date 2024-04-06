@@ -15,6 +15,8 @@ export default function Home() {
     checkIsFavorite,
     handleOpenModal,
     handleToggleBookSaved,
+    genres,
+    handleGenreChange
   } = useLogic();
 
   return (
@@ -27,6 +29,8 @@ export default function Home() {
           handleToggleBookSaved={handleToggleBookSaved}
           handleOpenModal={handleOpenModal}
           checkIsFavorite={checkIsFavorite}
+          genres={genres}
+          handleGenreChange={handleGenreChange}
         />
   </>) : (<>
            <DashboardSkeleton/>
