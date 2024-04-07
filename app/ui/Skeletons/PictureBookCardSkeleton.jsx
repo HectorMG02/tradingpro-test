@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SavedBookCardSkeleton = () => {
+const PictureBookCardSkeleton = () => {
     return (
         <div
             className="
@@ -13,4 +13,4 @@ const SavedBookCardSkeleton = () => {
     );
 };
 
-export default SavedBookCardSkeleton;
+export default PictureBookCardSkeleton;

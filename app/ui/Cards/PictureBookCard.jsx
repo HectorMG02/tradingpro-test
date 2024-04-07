@@ -2,7 +2,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const SavedBookCard = ({ book, showBookDetails }) => {
+const PictureBookCard = ({ book, showBookDetails }) => {
     return (
         <div
             key={book.id}
@@ -25,4 +25,4 @@ const SavedBookCard = ({ book, showBookDetails }) => {
     );
 };
 
-export default SavedBookCard;
+export default PictureBookCard;

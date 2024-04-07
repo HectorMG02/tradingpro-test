@@ -1,7 +1,7 @@
 'use client';
 
 import React, { Suspense } from 'react';
-import SavedBookCard from '../Cards/SavedBookCard';
+import PictureBookCard from '../Cards/PictureBookCard';
 import PlaceholderCard from '../Cards/PlaceholderCard';
 import useStore from '../../store';
 
@@ -25,7 +25,7 @@ export default function SavedBooksComponent({ handleOpenModal }) {
             >
                 {savedBooks.map((book, index) => (
                     <Suspense key={index} fallback={<PlaceholderCard />}>
-                        <SavedBookCard
+                        <PictureBookCard
                             book={book}
                             onRemove={() => removeBookFromSaved(book.id)}
                             showBookDetails={() => handleOpenModal(book)}

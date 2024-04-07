@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import BookCard from '../Cards/BookCard';
-import GenreSelector from '../GenreSelector/GenreSelector'; // Asegúrate de ajustar la ruta de importación según tu estructura
+import GenreSelector from '../GenreSelector/GenreSelector';
+import PictureBookCard from '../Cards/PictureBookCard';
 
 const BooksListComponent = ({
     books,
@@ -27,15 +28,34 @@ const BooksListComponent = ({
                 onGenreChange={onGenreChange}
                 total={books.length}
             />
-            <div className="grid md:grid-cols-3 sm:grid-cols-1 gap-4">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 sm:grid-cols-3 gap-4">
                 {books.map((book, index) => (
-                    <BookCard
-                        key={index}
-                        book={book.book}
-                        showBookDetails={() => handleOpenModal(book.book)}
-                        isFavorite={checkIsFavorite(book.book)}
-                        toggleFavorite={handleToggleBookSaved}
-                    />
+                    <div key={index}>
+                        <div className="hidden md:block">
+                            <BookCard
+                                key={index}
+                                book={book.book}
+                                showBookDetails={() =>
+                                    handleOpenModal(book.book)
+                                }
+                                isFavorite={checkIsFavorite(book.book)}
+                                toggleFavorite={handleToggleBookSaved}
+                            />
+                        </div>
+                        <div
+                            className="md:hidden justify-center items-center 
+                        flex flex-col w-full h-full
+                        "
+                        >
+                            <PictureBookCard
+                                key={index}
+                                book={book.book}
+                                showBookDetails={() =>
+                                    handleOpenModal(book.book)
+                                }
+                            />
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>

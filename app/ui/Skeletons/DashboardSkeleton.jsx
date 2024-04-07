@@ -2,8 +2,7 @@
 
 import React from 'react';
 import BookCardSkeleton from './BookCardSkeleton';
-import MobileBookCardSkeleton from './MobileBookCardSkeleton';
-import SavedBookCardSkeleton from './SavedBookCardSkeleton';
+import PictureBookCardSkeleton from './PictureBookCardSkeleton';
 import GenreSelectorSkeleton from './GenreSelectorSkeleton';
 
 const DashboardSkeleton = () => {
@@ -16,7 +15,7 @@ const DashboardSkeleton = () => {
                 <div className="h-2 mx-5 px-5 pt-8 bg-gray-300 rounded w-36"></div>
                 <div className="overflow-x-auto flex space-x-4 py-5 px-5 bg-gray-500">
                     {new Array(6).fill(0).map((_, index) => (
-                        <SavedBookCardSkeleton key={index} />
+                        <PictureBookCardSkeleton key={index} />
                     ))}
                 </div>
             </div>
@@ -30,8 +29,8 @@ const DashboardSkeleton = () => {
                             <div className="hidden md:block">
                                 <BookCardSkeleton />
                             </div>
-                            <div className="md:hidden">
-                                <MobileBookCardSkeleton key={index} />
+                            <div className="md:hidden justify-center items-center flex flex-col w-full h-full">
+                                <PictureBookCardSkeleton key={index} />
                             </div>
                         </div>
                     ))}
