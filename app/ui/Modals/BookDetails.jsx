@@ -9,6 +9,7 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
         <div
             className="fixed inset-0 bg-main-color-950 bg-opacity-50 overflow-y-auto bg-scroll h-full w-full flex justify-center items-center z-10"
             onClick={onClose}
+            role="dialog"
         >
             <div
                 className="relative bg-main-color-900/90 rounded-lg shadow-xl flex flex-col sm:flex-row max-w-4xl mx-auto overflow-y-auto"
