@@ -1,14 +1,12 @@
-'use client';
-
 import React, { Suspense } from 'react';
 import PictureBookCard from '../Cards/PictureBookCard';
 import PlaceholderCard from '../Cards/PlaceholderCard';
-import useStore from '../../store';
 
-export default function SavedBooksComponent({ handleOpenModal }) {
-    const savedBooks = useStore((state) => state.savedBooks);
-    const removeBookFromSaved = useStore((state) => state.removeBookFromSaved);
-
+export default function SavedBooksComponent({
+    handleOpenModal,
+    savedBooks,
+    removeBookFromSaved,
+}) {
     const placeholdersLength =
         5 - savedBooks.length > 0 ? 5 - savedBooks.length : 0;
     const placeholders = new Array(placeholdersLength).fill(0);

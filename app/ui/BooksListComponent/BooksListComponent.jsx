@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import BookCard from '../Cards/BookCard';
 import GenreSelector from '../GenreSelector/GenreSelector';

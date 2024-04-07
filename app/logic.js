@@ -52,6 +52,7 @@ const useLogic = () => {
 
   return {
     books,
+    savedBooks,
     selectedBook,
     isModalOpen,
     deselectBook,

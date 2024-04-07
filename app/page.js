@@ -9,6 +9,7 @@ import useLogic from "./logic";
 export default function Home() {
   const {
     books,
+    savedBooks,
     selectedBook,
     isModalOpen,
     deselectBook,
@@ -24,7 +25,10 @@ export default function Home() {
     <div className="m-4 sm:m-8 md:m-10">
       {books.length > 0 ? (
         <>
-          <SavedBooksComponent handleOpenModal={handleOpenModal} />
+          <SavedBooksComponent handleOpenModal={handleOpenModal} 
+            savedBooks={savedBooks} 
+            removeBookFromSaved={handleToggleBookSaved}
+          />
           <BooksListComponent
             books={books}
             handleToggleBookSaved={handleToggleBookSaved}

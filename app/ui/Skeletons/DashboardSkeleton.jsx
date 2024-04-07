@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import BookCardSkeleton from './BookCardSkeleton';
 import PictureBookCardSkeleton from './PictureBookCardSkeleton';
