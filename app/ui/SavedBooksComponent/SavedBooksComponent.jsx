@@ -10,16 +10,16 @@ export default function SavedBooksComponent({ handleOpenModal }) {
     const removeBookFromSaved = useStore((state) => state.removeBookFromSaved);
 
     const placeholdersLength =
-        6 - savedBooks.length > 0 ? 6 - savedBooks.length : 0;
+        5 - savedBooks.length > 0 ? 5 - savedBooks.length : 0;
     const placeholders = new Array(placeholdersLength).fill(0);
 
     return (
-        <div className="mt-10 bg-gray-500 p-4 md:p-5">
-            <h2 className="text-xl md:text-2xl font-bold mb-3">
-                Lista de libros
+        <div className="mt-10p-4 md:p-5 bg-blue-chill-900 rounded shadow-2xl">
+            <h2 className="text-xl md:text-2xl font-bold mb-3 text-white">
+                Libros guardados
             </h2>
             <div
-                className="overflow-x-auto flex space-x-4 py-4 px-2 bg-gray-500
+                className="overflow-x-auto flex space-x-4 py-4 px-2 
                 scrollbar-show scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-gray-500
             "
             >

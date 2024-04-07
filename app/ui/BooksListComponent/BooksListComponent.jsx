@@ -20,8 +20,13 @@ const BooksListComponent = ({
     };
 
     return (
-        <div className="mt-10 bg-gray-500 p-5">
-            <h2 className="text-2xl font-bold mb-3">Lista de libros</h2>
+        <div
+            className="mt-10 p-5 bg-blue-chill-900 
+        rounded shadow-2xl"
+        >
+            <h2 className="text-2xl font-bold mb-3 text-white">
+                Lista de libros
+            </h2>
             <GenreSelector
                 genres={genres}
                 selectedGenre={selectedGenre}
@@ -42,11 +47,7 @@ const BooksListComponent = ({
                                 toggleFavorite={handleToggleBookSaved}
                             />
                         </div>
-                        <div
-                            className="md:hidden justify-center items-center 
-                        flex flex-col w-full h-full
-                        "
-                        >
+                        <div className="md:hidden justify-center items-center flex flex-col w-full h-full">
                             <PictureBookCard
                                 key={index}
                                 book={book.book}

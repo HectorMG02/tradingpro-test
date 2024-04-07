@@ -7,11 +7,11 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
 
     return (
         <div
-            className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto bg-scroll h-full w-full flex justify-center items-center z-10"
+            className="fixed inset-0 bg-blue-chill-900 bg-opacity-50 overflow-y-auto bg-scroll h-full w-full flex justify-center items-center z-10"
             onClick={onClose}
         >
             <div
-                className="relative bg-gray-700/90 rounded-lg shadow-xl flex flex-col sm:flex-row max-w-4xl mx-auto overflow-y-auto"
+                className="relative bg-blue-chill-700/90 rounded-lg shadow-xl flex flex-col sm:flex-row max-w-4xl mx-auto overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="bg-gray-800/50 text-center p-4 sm:p-6  flex flex-col justify-between">
@@ -26,19 +26,23 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
                         />
                     </div>
                     <div className="mt-4">
-                        <p>ISBN</p>
-                        <p>{book.ISBN}</p>
+                        <p className=" text-white">ISBN</p>
+                        <p className="text-gray-300">{book.ISBN}</p>
                     </div>
                 </div>
                 <div className="p-4 sm:p-8 flex-1">
                     <div className="flex flex-col sm:flex-row justify-between items-start">
                         <div>
-                            <h2 className="text-xl sm:text-2xl font-bold md:w-full sm:w-[90%]">
+                            <h2 className="text-xl sm:text-2xl font-bold md:w-full sm:w-[90%] text-white">
                                 {book.title}
                             </h2>
-                            <p className="mt-2">Autor: {book.author.name}</p>
-                            <p>Género: {book.genre}</p>
-                            <p>Páginas: {book.pages}</p>
+                            <div className="text-gray-300">
+                                <p className="mt-2">
+                                    Autor: {book.author.name}
+                                </p>
+                                <p>Género: {book.genre}</p>
+                                <p>Páginas: {book.pages}</p>
+                            </div>
                         </div>
                         <div className="w-8 h-8 absolute float-end right-2">
                             <HearthIcon
@@ -50,13 +54,14 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
                         </div>
                     </div>
                     <div className="mt-6">
-                        <h3 className="text-lg sm:text-xl font-medium">
+                        <h3 className="text-lg sm:text-xl font-medium text-white">
                             Synopsis
                         </h3>
                         <p
                             className="mt-2 text-justify
                           mr-10 sm:mr-0 sm:text-left 
                           break-word text-sm sm:text-base
+                          text-gray-300
                         "
                         >
                             {book.synopsis}
@@ -65,10 +70,10 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
                     {book.author.otherBooks &&
                         book.author.otherBooks.length > 0 && (
                             <div className="mt-6">
-                                <h4 className="text-lg sm:text-xl font-medium">
+                                <h4 className="text-lg sm:text-xl font-medium text-white">
                                     Otros libros
                                 </h4>
-                                <ul className="list-disc pl-5 mt-2">
+                                <ul className="list-disc pl-5 mt-2 text-gray-300">
                                     {book.author.otherBooks.map(
                                         (title, index) => (
                                             <li key={index}>{title}</li>
@@ -80,7 +85,7 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
                     <button
                         onClick={onClose}
                         className="relative 
-                        mt-6 py-2 px-4 bg-gray-800 rounded hover:bg-gray-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 float-end"
+                        mt-6 py-2 px-4 bg-blue-chill-400 rounded hover:bg-blue-chill-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 float-end"
                     >
                         Cerrar
                     </button>

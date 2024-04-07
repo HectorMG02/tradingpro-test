@@ -43,6 +43,9 @@ const useLogic = () => {
     await setSelectedGenre(genre);
   };
 
+  useEffect(() => {
+      document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+  }, [isModalOpen]);
 
   return {
     books,
