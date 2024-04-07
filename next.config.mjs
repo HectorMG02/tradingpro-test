@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ["images-na.ssl-images-amazon.com"],
   },
+  experimental: {
+    forceSwcTransforms: true,
+  },
 };
 
 export default nextConfig;
