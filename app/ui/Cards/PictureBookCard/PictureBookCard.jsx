@@ -9,6 +9,7 @@ const PictureBookCard = ({ book, showBookDetails }) => {
       w-44 sm:w-55 md:w-44 lg:w-48 xl:w-52 2xl:w-56
       h-56 sm:h-60 md:h-64 lg:h-72 xl:h-80"
             onClick={showBookDetails}
+            data-testid="picture-book-card"
         >
             <div className="w-full h-full flex justify-center items-center">
                 <Image
