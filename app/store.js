@@ -16,11 +16,12 @@ const channel =
 const useStore = create((set, get) => ({
   savedBooks: [],
   genres,
-  selectedGenre: 'Todos',
+  selectedGenre: "Todos",
   initializeBooks: async () => {
     const savedBooks = (await localForage.getItem("savedBooks")) || [];
-    const selectedGenre = (await localForage.getItem("selectedGenre")) || 'Todos';
-    set({ savedBooks, selectedGenre })
+    const selectedGenre =
+      (await localForage.getItem("selectedGenre")) || "Todos";
+    set({ savedBooks, selectedGenre });
   },
   toggleBookSaved: async (bookToToggle) => {
     const { savedBooks } = get();
@@ -45,7 +46,6 @@ const useStore = create((set, get) => ({
   isModalOpen: false,
   selectBook: (book) => set({ selectedBook: book, isModalOpen: true }),
   deselectBook: () => set({ selectedBook: null, isModalOpen: false }),
-  
 }));
 
 channel?.addEventListener("message", async (event) => {
@@ -57,6 +57,5 @@ channel?.addEventListener("message", async (event) => {
     useStore.setState({ selectedGenre });
   }
 });
-
 
 export default useStore;

@@ -3,7 +3,7 @@ import { useBooksData } from "./hooks/useBooksData";
 import useStore from "./store";
 
 const useLogic = () => {
-  const rawBooks = useBooksData(); 
+  const rawBooks = useBooksData();
   const [books, setBooks] = useState(rawBooks);
 
   const selectBook = useStore((state) => state.selectBook);
@@ -13,17 +13,20 @@ const useLogic = () => {
   const isModalOpen = useStore((state) => state.isModalOpen);
   const deselectBook = useStore((state) => state.deselectBook);
   const toggleBookSaved = useStore((state) => state.toggleBookSaved);
-  
+
   const genres = useStore((state) => state.genres);
-  const selectedGenre = useStore(state => state.selectedGenre);
-  const setSelectedGenre = useStore(state => state.setSelectedGenre);
+  const selectedGenre = useStore((state) => state.selectedGenre);
+  const setSelectedGenre = useStore((state) => state.setSelectedGenre);
 
   useEffect(() => {
     initializeBooks();
   }, [initializeBooks]);
 
   useEffect(() => {
-    const filteredBooks = selectedGenre === "Todos" ? rawBooks : rawBooks.filter((book) => book.book.genre === selectedGenre);
+    const filteredBooks =
+      selectedGenre === "Todos"
+        ? rawBooks
+        : rawBooks.filter((book) => book.book.genre === selectedGenre);
     setBooks(filteredBooks);
   }, [selectedGenre, rawBooks]);
 
@@ -44,7 +47,7 @@ const useLogic = () => {
   };
 
   useEffect(() => {
-      document.body.style.overflow = isModalOpen ? 'hidden' : 'auto';
+    document.body.style.overflow = isModalOpen ? "hidden" : "auto";
   }, [isModalOpen]);
 
   return {
@@ -57,7 +60,7 @@ const useLogic = () => {
     handleToggleBookSaved,
     genres,
     handleGenreChange,
-    selectedGenre
+    selectedGenre,
   };
 };
 
