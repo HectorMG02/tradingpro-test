@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Prueba técnica de TradingPro
 
-## Getting Started
+El objetivo de esta prueba es diseñar e implementar una pequeña aplicación web de lista de libros utilizando las herramientas de tu elección siempre utilizando JavaScript como lenguaje y NextJS como framework. El resultado está desplegado en Netlify: https://tradingpro-hector-matias.netlify.app/
 
-First, run the development server:
+## Contexto
+
+Somos un sello editorial de libros multinacional. Queremos ofrecer a nuestro público una forma de ver nuestro catálogo y poder guardar los libros que les interesan en una lista de lectura.
+Para ello, queremos desarrollar una aplicación web que permita a los usuarios ver los libros disponibles y crear una lista de lectura. Ten en cuenta que:
+No sabemos si el framework que utilicemos ahora será el definitivo, pero querremos reutilizar el máximo de código posible. La aplicación debe ser fácil de usar y agradable a la vista.
+Tenemos un 80% de usuarios que vienen de navegadores de escritorio.
+Usa el archivo books.json para obtener los datos de los libros. Puedes añadir más libros si lo deseas, siempre y cuando siga la misma estructura.
+
+## 🚀 Deployment
+
+Para ejecutar esta aplicación, sigue los siguientes pasos:
+
+- Clona este repositorio en tu máquina local.
+- Asegúrate de tener Node.js instalado en su sistema.
+- Abre una terminal y navegue hasta la carpeta raíz del proyecto.
+- Ejecuta el siguiente comando para instalar las dependencias del proyecto.
+
+```bash
+npm install
+```
+
+- Una vez termine la instalación, ejecuta el sigueinte comando para arrancar la aplicación
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Abre tu navegador y entra en la siguiente URL: http://localhost:3000
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🧪 Tests
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Para ejecutar los tests puedes ejecutar cualquiera de los siguientes comandos
 
-## Learn More
+```bash
+  npm run test
+```
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+  npm run test:watch
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+  npm run test:coverage
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+![Coverage](assets/coverage.png)
 
-## Deploy on Vercel
+## 📝 Documentation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Para trabajar con este proyecto hay que tener las siguientes cosas en cuenta.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Usamos Husky para que al hacer un commit se ejecute el linter y al hacer push se ejecuten tanto prettier como los tests.
+
+El store está montado con zustand y con localforage para que el estado sea persistente aunque recarguemos la aplicación.
+
+Para que el estado se actualice en más de una pestaña a la vez he utilizado un BroadcastChannel para detectar ahí los eventos.
+
+## 📚 Tech Stack
+
+- Next.js
+- TailwindCSS
+- Zustand
+- Jest
+- Husky
+- Prettier
+- localforage

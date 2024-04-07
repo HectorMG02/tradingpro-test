@@ -1,6 +1,6 @@
 import React from "react";
 import { render, act, screen } from "@testing-library/react";
-import { useBooksData } from "./useBooksData"; // Asegúrate de ajustar la importación según sea necesario
+import { useBooksData } from "./useBooksData";
 
 jest.mock("../lib/data.js", () => ({
   data: {
@@ -29,6 +29,7 @@ describe("useBooksData", () => {
     act(() => {
       jest.runAllTimers();
     });
+
     expect(screen.getByText("Book 1")).toBeInTheDocument();
   });
 });
