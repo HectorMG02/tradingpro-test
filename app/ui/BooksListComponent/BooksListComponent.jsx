@@ -1,7 +1,7 @@
 import React from 'react';
 import BookCard from '../Cards/BookCard/BookCard';
 import GenreSelector from '../GenreSelector/GenreSelector';
-import PictureBookCard from '../Cards/PictureBookCard';
+import PictureBookCard from '../Cards/PictureBookCard/PictureBookCard';
 
 const BooksListComponent = ({
     books,

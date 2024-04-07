@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import PictureBookCard from '../Cards/PictureBookCard';
+import PictureBookCard from '../Cards/PictureBookCard/PictureBookCard';
 import PlaceholderCard from '../Cards/PlaceholderCard';
 
 export default function SavedBooksComponent({
