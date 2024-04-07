@@ -54,7 +54,7 @@ const useLogic = () => {
     handleToggleBookSaved,
     genres,
     handleGenreChange,
-    selectedGenre,
+    selectedGenre
   };
 };
 
