@@ -7,7 +7,7 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
 
     return (
         <div
-            className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center z-10"
+            className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto bg-scroll h-full w-full flex justify-center items-center z-10"
             onClick={onClose}
         >
             <div
