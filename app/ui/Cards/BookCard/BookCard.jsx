@@ -1,19 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import HearthIcon from '../Icons/HearthIcon';
+import HearthIcon from '../../Icons/HearthIcon';
 
 const BookCard = ({ book, showBookDetails, isFavorite, toggleFavorite }) => {
-    const formatSynopsis = (synopsis, title) => {
-        const titleLimit = 20;
-        const synopsisLimit = 50;
-
-        if (synopsis.length > synopsisLimit && title.length > titleLimit) {
-            return `${synopsis.substring(0, synopsisLimit)}...`;
-        }
-
-        return synopsis;
-    };
-
     return (
         <div
             className="flex flex-col h-52 md:max-w-xl md:flex-row
@@ -51,9 +40,7 @@ const BookCard = ({ book, showBookDetails, isFavorite, toggleFavorite }) => {
                 <div
                     className={`flex items-center justify-center text-center transition-transform duration-500 ease-in-out ${book.showDescription ? 'rotate-y-0' : 'rotate-y-180'}`}
                 >
-                    <p className="text-left text-gray-300">
-                        {formatSynopsis(book.synopsis, book.title)}
-                    </p>
+                    <p className="text-left text-gray-300">{book.synopsis}</p>
                 </div>
             </div>
         </div>
