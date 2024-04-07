@@ -15,8 +15,8 @@ export default function SavedBooksComponent({ handleOpenModal }) {
     const placeholders = new Array(placeholdersLength).fill(0);
 
     return (
-        <div className="flex overflow-x-auto overflow-y-hidden bg-scroll bg-gray-500 pb-4 sm:pb-8 gap-1 sm:gap-2 justify-center items-center">
-            <h2 className="text-2xl font-bold px-5 pt-8">Lista de lectura</h2>
+        <div className="mt-10 bg-gray-500 p-5">
+            <h2 className="text-2xl font-bold mb-3">Lista de libros</h2>
             <div className="flex overflow-x-auto overflow-y-hidden bg-scroll bg-gray-500 pb-14 gap-2 justify-center items-center">
                 {savedBooks.map((book, index) => (
                     <Suspense key={index} fallback={<PlaceholderCard />}>
