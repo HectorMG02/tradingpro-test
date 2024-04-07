@@ -14,12 +14,12 @@ export default function SavedBooksComponent({ handleOpenModal }) {
     const placeholders = new Array(placeholdersLength).fill(0);
 
     return (
-        <div className="mt-10p-4 md:p-5 bg-main-color-900 rounded shadow-2xl">
+        <div className="mt-10p-4 md:p-5 bg-main-color-800 rounded shadow-2xl">
             <h2 className="text-xl md:text-2xl font-bold mb-3 text-white">
                 Libros guardados
             </h2>
             <div
-                className="overflow-x-auto flex space-x-4 py-4 px-2 
+                className="overflow-x-auto flex py-4 
                 scrollbar-show scrollbar-thin scrollbar-thumb-gray-800 scrollbar-track-gray-500
             "
             >

@@ -21,7 +21,7 @@ const BooksListComponent = ({
 
     return (
         <div
-            className="mt-10 p-5 bg-main-color-900 
+            className="mt-10 p-5 bg-main-color-800 
         rounded shadow-2xl"
         >
             <h2 className="text-2xl font-bold mb-3 text-white">

@@ -19,7 +19,7 @@ const BookCard = ({ book, showBookDetails, isFavorite, toggleFavorite }) => {
     return (
         <div
             className="flex flex-col h-52 md:max-w-xl md:flex-row
-        transition-transform duration-500 ease-in-out transform hover:scale-105 overflow-hidden cursor-pointer hover:shadow-xl bg-main-color-800 
+        transition-transform duration-500 ease-in-out transform hover:scale-105 overflow-hidden cursor-pointer hover:shadow-xl bg-main-color-950 
         rounded shadow-2xl
     "
             onClick={showBookDetails}

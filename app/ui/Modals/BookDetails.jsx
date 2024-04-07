@@ -7,11 +7,11 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
 
     return (
         <div
-            className="fixed inset-0 bg-main-color-900 bg-opacity-50 overflow-y-auto bg-scroll h-full w-full flex justify-center items-center z-10"
+            className="fixed inset-0 bg-main-color-950 bg-opacity-50 overflow-y-auto bg-scroll h-full w-full flex justify-center items-center z-10"
             onClick={onClose}
         >
             <div
-                className="relative bg-main-color-700/90 rounded-lg shadow-xl flex flex-col sm:flex-row max-w-4xl mx-auto overflow-y-auto"
+                className="relative bg-main-color-900/90 rounded-lg shadow-xl flex flex-col sm:flex-row max-w-4xl mx-auto overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
             >
                 <div className="bg-gray-800/50 text-center p-4 sm:p-6  flex flex-col justify-between">
@@ -84,8 +84,8 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
                         )}
                     <button
                         onClick={onClose}
-                        className="relative 
-                        mt-6 py-2 px-4 bg-main-color-400 rounded hover:bg-main-color-500 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 float-end"
+                        className="relative  shadow-md
+                        mt-6 py-2 px-4 bg-main-color-950 text-white rounded hover:bg-main-color-800 hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50 float-end"
                     >
                         Cerrar
                     </button>
