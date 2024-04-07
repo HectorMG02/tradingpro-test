@@ -25,7 +25,6 @@ export default function SavedBooksComponent({
                     <Suspense key={index} fallback={<PlaceholderCard />}>
                         <PictureBookCard
                             book={book}
-                            onRemove={() => removeBookFromSaved(book.id)}
                             showBookDetails={() => handleOpenModal(book)}
                         />
                     </Suspense>

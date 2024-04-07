@@ -77,4 +77,20 @@ describe('BookDetails', () => {
         fireEvent.click(hearthButton);
         expect(toggleFavoriteMock).toHaveBeenCalledTimes(1);
     });
+
+    it('book-details stops propagation', () => {
+        const stopPropagationMock = jest.fn();
+        render(
+            <BookDetails
+                book={mockBook}
+                isOpen={true}
+                onClose={() => {}}
+                toggleFavorite={() => {}}
+                isFavorite={true}
+            />
+        );
+
+        fireEvent.click(screen.getByTestId('book-details'));
+        expect(stopPropagationMock).toHaveBeenCalledTimes(0);
+    });
 });

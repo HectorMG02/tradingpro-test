@@ -35,4 +35,21 @@ describe('SavedBooksComponent', () => {
 
         expect(handleOpenModalMock).toHaveBeenCalledWith(mockBooks[0]);
     });
+
+    it("if there is more than 5 saved books, it doesn't render placeholders", () => {
+        render(
+            <SavedBooksComponent
+                savedBooks={[
+                    ...mockBooks,
+                    { id: '3', title: 'Book 3' },
+                    { id: '4', title: 'Book 4' },
+                    { id: '5', title: 'Book 5' },
+                ]}
+                handleOpenModal={() => {}}
+                removeBookFromSaved={() => {}}
+            />
+        );
+
+        expect(screen.queryByText(/Empty/)).toBeNull();
+    });
 });

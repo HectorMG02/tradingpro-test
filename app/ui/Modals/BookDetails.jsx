@@ -14,6 +14,7 @@ const BookDetails = ({ book, isOpen, onClose, toggleFavorite, isFavorite }) => {
             <div
                 className="relative bg-main-color-900/90 rounded-lg shadow-xl flex flex-col sm:flex-row max-w-4xl mx-auto overflow-y-auto"
                 onClick={(e) => e.stopPropagation()}
+                data-testid="book-details"
             >
                 <div className="bg-gray-800/50 text-center p-4 sm:p-6  flex flex-col justify-between">
                     <div className="flex-1 mt-20 sm:mt-0">
