@@ -14,22 +14,22 @@ Usa el archivo books.json para obtener los datos de los libros. Puedes añadir m
 
 Para ejecutar esta aplicación, sigue los siguientes pasos:
 
--   Clona este repositorio en tu máquina local.
--   Asegúrate de tener Node.js instalado en su sistema.
--   Abre una terminal y navegue hasta la carpeta raíz del proyecto.
--   Ejecuta el siguiente comando para instalar las dependencias del proyecto.
+- Clona este repositorio en tu máquina local.
+- Asegúrate de tener Node.js instalado en su sistema.
+- Abre una terminal y navegue hasta la carpeta raíz del proyecto.
+- Ejecuta el siguiente comando para instalar las dependencias del proyecto.
 
 ```bash
 npm install
 ```
 
--   Una vez termine la instalación, ejecuta el sigueinte comando para arrancar la aplicación
+- Una vez termine la instalación, ejecuta el sigueinte comando para arrancar la aplicación
 
 ```bash
 npm run dev
 ```
 
--   Abre tu navegador y entra en la siguiente URL: http://localhost:3000
+- Abre tu navegador y entra en la siguiente URL: http://localhost:3000
 
 ## 🧪 Tests
 
@@ -63,10 +63,10 @@ Para que el estado se actualice en más de una pestaña a la vez he utilizado un
 
 ## 📚 Tech Stack
 
--   Next.js
--   TailwindCSS
--   Zustand
--   Jest
--   Husky
--   Prettier
--   localforage
+- Next.js
+- TailwindCSS
+- Zustand
+- Jest
+- Husky
+- Prettier
+- localforage

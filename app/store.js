@@ -48,7 +48,6 @@ const useStore = create((set, get) => ({
   deselectBook: () => set({ selectedBook: null, isModalOpen: false }),
 }));
 
-
 channel?.addEventListener("message", async (event) => {
   switch (event.data.type) {
     case "update":
