@@ -14,22 +14,22 @@ Usa el archivo books.json para obtener los datos de los libros. Puedes añadir m
 
 Para ejecutar esta aplicación, sigue los siguientes pasos:
 
-- Clona este repositorio en tu máquina local.
-- Asegúrate de tener Node.js instalado en su sistema.
-- Abre una terminal y navegue hasta la carpeta raíz del proyecto.
-- Ejecuta el siguiente comando para instalar las dependencias del proyecto.
+-   Clona este repositorio en tu máquina local.
+-   Asegúrate de tener Node.js instalado en su sistema.
+-   Abre una terminal y navegue hasta la carpeta raíz del proyecto.
+-   Ejecuta el siguiente comando para instalar las dependencias del proyecto.
 
 ```bash
 npm install
 ```
 
-- Una vez termine la instalación, ejecuta el sigueinte comando para arrancar la aplicación
+-   Una vez termine la instalación, ejecuta el sigueinte comando para arrancar la aplicación
 
 ```bash
 npm run dev
 ```
 
-- Abre tu navegador y entra en la siguiente URL: http://localhost:3000
+-   Abre tu navegador y entra en la siguiente URL: http://localhost:3000
 
 ## 🧪 Tests
 
@@ -56,15 +56,17 @@ Para trabajar con este proyecto hay que tener las siguientes cosas en cuenta.
 Usamos Husky para que al hacer un commit se ejecute el linter y al hacer push se ejecuten tanto prettier como los tests.
 
 El store está montado con zustand y con localforage para que el estado sea persistente aunque recarguemos la aplicación.
+![Localforage](assets/localforage.png)
 
 Para que el estado se actualice en más de una pestaña a la vez he utilizado un BroadcastChannel para detectar ahí los eventos.
+![Broadcast](assets/broadcast.png)
 
 ## 📚 Tech Stack
 
-- Next.js
-- TailwindCSS
-- Zustand
-- Jest
-- Husky
-- Prettier
-- localforage
+-   Next.js
+-   TailwindCSS
+-   Zustand
+-   Jest
+-   Husky
+-   Prettier
+-   localforage

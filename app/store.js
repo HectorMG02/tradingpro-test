@@ -48,13 +48,19 @@ const useStore = create((set, get) => ({
   deselectBook: () => set({ selectedBook: null, isModalOpen: false }),
 }));
 
+
 channel?.addEventListener("message", async (event) => {
-  if (event.data.type === "update") {
-    const savedBooks = await localForage.getItem("savedBooks");
-    useStore.setState({ savedBooks });
-  } else if (event.data.type === "SET_SELECTED_GENRE") {
-    const selectedGenre = event.data.genre;
-    useStore.setState({ selectedGenre });
+  switch (event.data.type) {
+    case "update":
+      const savedBooks = await localForage.getItem("savedBooks");
+      useStore.setState({ savedBooks });
+      break;
+    case "SET_SELECTED_GENRE":
+      const selectedGenre = event.data.genre;
+      useStore.setState({ selectedGenre });
+      break;
+    default:
+      break;
   }
 });
 
